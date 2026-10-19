@@ -25,5 +25,24 @@ namespace ConsoleApp1
             _goalsFor = 0;
             _goalsAgainst = 0;
         }
+        public void AddResult(int LG, int KG)
+        {
+            _goalsFor += LG;
+            _goalsAgainst += KG;
+
+        if(LG> KG)
+            {
+                _points += 3;
+            }
+        else if ( LG == KG)
+            {
+                _points =+ 1;
+            }
+        }
+
+        public int GoalDifference()
+        {
+            return _goalsFor -= _goalsAgainst;
+        }
     }
 }
