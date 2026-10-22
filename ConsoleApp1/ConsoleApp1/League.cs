@@ -42,5 +42,38 @@ namespace ConsoleApp1
                 return true;
             }
         }
+
+        public int UnplayedCount()
+        {
+            int count = 0;
+            foreach (var match in _matches)
+            {
+                if (!match.IsPlayed)
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+        public Team Leader()
+        {
+            Team MostSuccessful = _teams[0];
+            foreach(Team item in _teams)
+            {
+                if (item.Points == MostSuccessful.Points) 
+                {
+                    if(item.GoalDifference() > MostSuccessful.GoalDifference())
+                    {
+                        MostSuccessful = item;
+                    }
+                }
+                else if (item.Points > MostSuccessful.Points)
+                {
+                    MostSuccessful = item;
+                }
+            }
+            return MostSuccessful;
+        }
     }
 }
