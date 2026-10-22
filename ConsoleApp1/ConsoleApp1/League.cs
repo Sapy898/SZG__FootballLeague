@@ -46,14 +46,14 @@ namespace ConsoleApp1
         public int UnplayedCount()
         {
             int count = 0;
-            foreach (var match in _matches)
+            foreach (Match match in _matches)
             {
-                if (!match.IsPlayed)
+                if (match.IsPlayed == false)
                 {
                     count++;
                 }
             }
-            return count;
+            return _matches.Count - count;
         }
 
         public Team Leader()

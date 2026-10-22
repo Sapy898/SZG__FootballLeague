@@ -51,10 +51,10 @@ namespace ConsoleApp1
 
         public string Describe()
         {
-            if(IsPlayed)
-                return $"{Home.Name} - {Away.Name} {HomeGoals}:{AwayGoals}";
-            else
+            if(!IsPlayed)
                 return $"{Home.Name} - {Away.Name} (még nem játszottak)";
+            else
+                return $"{Home.Name} - {Away.Name} {HomeGoals}:{AwayGoals}";
         }
     }
 }
