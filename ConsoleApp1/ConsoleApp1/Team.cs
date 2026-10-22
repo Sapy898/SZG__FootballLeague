@@ -44,5 +44,10 @@ namespace ConsoleApp1
         {
             return _goalsFor -= _goalsAgainst;
         }
+
+        public string Describe()
+        {
+            return $"{Name}: {Points} {GoalsFor}-{GoalsAgainst}";
+        }
     }
 }
