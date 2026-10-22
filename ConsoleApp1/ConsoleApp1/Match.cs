@@ -24,14 +24,29 @@ namespace ConsoleApp1
 
         public Match(Team home,Team away)
         {
-            home = _home;
-            away = _away;
+            _home= home;
+            _away = away;
             HomeGoals = 0;
             AwayGoals = 0;
             IsPlayed = false;
         }
 
+        public bool Play(int homeGoals, int awayGoals)
+        {
+            if (IsPlayed)
+            {
+                return false;
+            }
+            else if(homeGoals < 0 || awayGoals < 0)
+            {
+                return false;
+            }
 
+            Home.AddResult(homeGoals, awayGoals);
+            Away.AddResult(awayGoals, homeGoals);
+            IsPlayed = true;
 
+            return true;
+        }
     }
 }
